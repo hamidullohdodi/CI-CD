@@ -1,4 +1,4 @@
-name: API
+name: Deploy
 
 on:
   push:
@@ -6,25 +6,19 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Install Golang
-        uses: actions/setup-go@v4
-        with:
-          go-version: '1.23.0'
-
-      - name: Install Dependencies
-        run: go mod download
-
-      - name: Deploy
+      - name: Run SSH command
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.PORT }}
+          host: ${{ secrets.SSH_HOST }}  # Server host manzili, bu parametr berilishi kerak
+          username: ${{ secrets.SSH_USER }}  # Serverdagi foydalanuvchi nomi
+          key: ${{ secrets.SSH_KEY }}  # Serverga ulanish uchun SSH kaliti
+          port: 22  # Agar default port 22 bo'lmasa, boshqasini ham ko'rsatishingiz mumkin
+          script: |
+            echo "Hello, World!"
