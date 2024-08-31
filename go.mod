@@ -1,6 +1,6 @@
 module api-gateway
 
-go 1.22.1
+go 1.23.0
 
 require (
 	github.com/casbin/casbin/v2 v2.98.0

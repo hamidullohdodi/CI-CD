@@ -16,13 +16,10 @@ jobs:
       - name: Install Golang
         uses: actions/setup-go@v4
         with:
-          go-version: '1.22.1'
+          go-version: '1.23.0'
 
       - name: Install Dependencies
         run: go mod download
-
-      - name: Build
-        run: go build -v ./...
 
       - name: Deploy
         uses: appleboy/ssh-action@master
@@ -31,14 +28,3 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
-          script: |
-            cd health/API-Gateway/
-            git pull
-            docker compose down
-            docker compose up -d
-            cd ../Health-auth-service/
-            docker compose down
-            docker compose up -d
-            cd ../Health-Analytics-service/
-            docker compose down
-            docker compose up -d

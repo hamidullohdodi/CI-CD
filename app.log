@@ -1,9 +1,0 @@
-time=2024-08-14T14:16:36.883+05:00 level=INFO msg="API Gateway started successfully!"
-time=2024-08-14T14:19:04.916+05:00 level=INFO msg="API Gateway started successfully!"
-time=2024-08-14T14:50:14.873+05:00 level=INFO msg="API Gateway started successfully!"
-time=2024-08-14T14:53:11.536+05:00 level=INFO msg="API Gateway started successfully!"
-time=2024-08-14T14:59:26.118+05:00 level=INFO msg="API Gateway started successfully!"
-time=2024-08-14T15:00:21.819+05:00 level=ERROR msg="Error binding JSON" error=EOF
-time=2024-08-14T15:00:46.893+05:00 level=ERROR msg="Error binding JSON" error=EOF
-time=2024-08-14T15:03:05.974+05:00 level=INFO msg="API Gateway started successfully!"
-time=2024-08-14T15:03:29.879+05:00 level=ERROR msg="Error getting daily health summary" error="rpc error: code = Unknown desc = mongo: no documents in result"

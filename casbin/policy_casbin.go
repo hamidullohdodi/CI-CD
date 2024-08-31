@@ -11,11 +11,11 @@ import (
 )
 
 const (
-	host     = "postgres_container"
+	host     = "localhost"
 	port     = "5432"
-	dbname   = "casbin"
-	username = "macbookpro"
-	password = "1111"
+	dbname   = "auth"
+	username = "postgres"
+	password = "dodi"
 )
 
 func CasbinEnforcer(logger *slog.Logger) (*casbin.Enforcer, error) {
