@@ -16,9 +16,5 @@ jobs:
       - name: Run SSH command
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}  # Server host manzili, bu parametr berilishi kerak
-          username: ${{ secrets.SSH_USER }}  # Serverdagi foydalanuvchi nomi
-          key: ${{ secrets.SSH_KEY }}  # Serverga ulanish uchun SSH kaliti
-          port: 22  # Agar default port 22 bo'lmasa, boshqasini ham ko'rsatishingiz mumkin
           script: |
             echo "Hello, World!"
